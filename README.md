@@ -2,4 +2,4 @@ Real Estate Predictor is a web app (built as a project for an undergraduate cour
 
 The website is currently deployed at: realestatepredict.herokuapp.com. To view the site, log in with userid: test and password: testword1. 
 
-Thanks for taking a look!
+Thanks for dropping by!
