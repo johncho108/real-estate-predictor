@@ -1,1 +1,1 @@
-web: gunicorn real_estate_predictor.wsgi
+web: gunicorn real_estate_predictor.wsgi --log-file -
