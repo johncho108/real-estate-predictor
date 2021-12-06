@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+    
+    {% block content %}
+    <div class="container">
+        {% if user.is_authenticated %}
+        <div class="home row">
+            <div class='col-3'></div>
+            <div class='col-6'>
+                <div id="prediction">
+                    <br>
+                    <br>
+                    <h5>According to our calculations, your property is worth: </h5>
+                    <br>
+                    {% if prediction_display %}
+                        {% if "-" in prediction_display %}
+                            <h5>$0! Oh no! :(</h5>
+                            <br>
+                            <h6><em>Maybe there are too many bedrooms for insufficient livable space.<br><br>Or maybe the quality of the construction is too low.<br><br>Perhaps you'd like to double check your numbers below!</em></h6>
+                        {% else %}
+                            <h5>{{ prediction_display }}</h5>
+                            <h6><em>R^2 value of: 0.571</em></h6>
+                            {% endif %}
+                    {% else %}
+                    <h6><em>Enter the features below to find out! (See below for recommended ranges)</em></h6>
+                    {% endif %}
+                </div>
+                <form class="features-form form-group" method="post">
+                    <br>
+                    <h5>Required Fields:</h5>
+                    <br>
+                    {% csrf_token %}
+                        <table>
+                            {{ form1.as_table }}
+                        </table>
+                    <br>
+                    <h5>Optional Fields:</h5>
+                    <br>
+                    {% csrf_token %}
+                        <table>
+                            {{ form2.as_table }}
+                        </table>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+                <form class="form-group" id="start-over" action="">
+                    <button type="submit">Start Over</button>
+                </form>
+            </div>
+            <div class='col-3'></div>
+        </div>
+        {% else %}
+        <div class='row'>
+            <div class='col-3'></div>
+            <div class='col-6 text-center'>
+                <br><br>
+                <h4>Please log in to access content.</h4>
+            </div>
+            <div class='col-3'></div>
+        </div>
+        {% endif %}
+    </div>
+    {% endblock content %}
+

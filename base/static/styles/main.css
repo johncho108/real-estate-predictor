@@ -1,0 +1,82 @@
+* {
+    font-family: 'Trebuchet MS';
+}
+
+a { 
+    color: black;
+    margin: 1em 0em;
+}
+
+a:hover { 
+    color: gray;
+}
+
+.navbar-brand {
+    font-size: 1.6em;
+}
+
+.nav-item {
+    font-size: 1.2em;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover { 
+    color: gray;
+}
+
+.brand-link {
+    text-decoration: none;
+}
+
+.brand-link:hover {
+    color: black;
+} 
+
+.loginRegister{
+    margin: 1em 0em;
+}
+
+.form-group{
+    margin: 1em 0em;
+}
+
+.btn {
+    margin: 1em 0em;
+    background-color:white;
+    color:black;
+}
+
+.btn:hover, .btn:active, .btn:focus, .btn:visited {
+    background-color:white;
+    color:black;
+}
+
+input::placeholder {
+    color: rgb(214, 214, 214);
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+#start-over {
+    margin-bottom: 3em;
+}
+
+.img {
+    max-width: 100%;
+    max-height: 100%; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 3em;
+}
+
+.table-wrapper {
+    max-height: 20em;
+    overflow: auto;
+    display:inline-block;
+}

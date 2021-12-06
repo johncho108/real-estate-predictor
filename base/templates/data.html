@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+    
+    {% block content %}
+
+    <div class="container">
+        {% if user.is_authenticated %}
+        <div class="row">
+            <div class='col-1'></div>
+            <div class='col-10'>
+                {% load static %} <img class="img" id="histogram" src="{% static 'media/histogram_prices.png' %}"/>
+            </div>
+            <div class='col-1'></div>
+        </div>
+        <div class="row">
+            <div class='col-1'></div>
+            <div class='col-10'>
+                {% load static %} <img class="img" id="regression" src="{% static 'media/prices_vs_sqft.png' %}"/>
+            </div>
+            <div class='col-1'></div>
+        </div>
+        <div class="row">
+            <div class='col-1'></div>
+            <div class='col-10'>
+                {% load static %} <img class="img" id="construction" src="{% static 'media/construction.png' %}"/>
+            </div>
+            <div class='col-1'></div>
+        </div>
+        <div class="row">
+            <div class='col-1'></div>
+            <div class='col-10'>
+                {% load static %} <img class="img" id="accuracy" src="{% static 'media/actual_vs_predicted_prices.png' %}"/>
+                <br><br>
+            </div>
+            <div class='col-1'></div>
+        </div>
+        <div class="row">
+            <h5 class="text-center">First 100 Rows of Real Estate Data (cleaned)</h5>
+            <div class="table-responsive table-wrapper">
+                <table class="table" id="data">
+                    <tr>
+                        <th>Price</th>
+                        <th>Bedrooms</th>
+                        <th>Sqft_Living</th>
+                        <th>Grade</th>
+                        <th>Bathrooms</th>
+                        <th>Sqft_Lot</th>
+                        <th>Floors</th>
+                        <th>Waterfront</th>
+                        <th>View</th>
+                        <th>Condition</th>
+                    </tr>
+                    {% for row in csv_rows %}
+                        <tr>
+                            {% for cell in row %}
+                                <td>{{ cell }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <p><br><em>Source: Kaggle, License: CC0 Public Domain</em></p>
+        <div class="row">
+            <br><br>
+        </div>
+        {% else %}
+        <div class='row'>
+            <div class='col-3'></div>
+            <div class='col-6 text-center'>
+                <br><br>
+                <h4>Please log in to access content.</h4>
+            </div>
+            <div class='col-3'></div>
+        </div>
+        {% endif %}
+    </div>
+    {% endblock content %}
+
