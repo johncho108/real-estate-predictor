@@ -55,7 +55,7 @@ a:hover {
 }
 
 input::placeholder {
-    color: rgb(214, 214, 214);
+    color: rgba(148, 147, 147, 0.363);
 }
 
 input:focus::placeholder {
